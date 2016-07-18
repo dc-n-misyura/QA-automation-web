@@ -1,5 +1,6 @@
 import pytest
 from fixture.application import Application
+from fixture.session import SessionHelper
 
 @pytest.fixture
 def app(request):

@@ -85,7 +85,7 @@ def assert_vendor_page(self):
     wd.find_element_by_xpath("//h2[@id='anchor_test']//b[.='Популярное']")
     wd.find_element_by_link_text("Инфо").click()
     wd.find_element_by_css_selector("h1")
-    wd.find_element_by_link_text("Отзывы 4929").click()
+    # wd.find_element_by_link_text("Отзывы 4929").click()
     wd.find_element_by_link_text("Меню").click()
 
 @step('I order product')
