@@ -8,7 +8,7 @@ def open_home_page(app):
 
 @when('I login')
 def login(app):
-    app.session.login(login="w@w.com", password="111111")
+    app.login()
     pass
 
 @then('I see profile screen')
