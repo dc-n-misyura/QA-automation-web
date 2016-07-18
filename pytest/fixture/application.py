@@ -51,18 +51,18 @@ class Application:
         wd= self.driver
         wd.find_element_by_css_selector("uaddresses-str").click()
 
-    def find_by_address_from_home_page(self, new_address):
+    def find_by_address_from_home_page(self):
         wd = self.driver
         wd.find_element_by_id("user-addr__input").click()
         wd.find_element_by_id("user-addr__input").clear()
-        wd.find_element_by_id("user-addr__input").send_keys(new_address)
+        wd.find_element_by_id("user-addr__input").send_keys("Москва, улица Александра Солженицына, 23Ас4")
         wd.find_element_by_css_selector("a.user-addr__submit.sbm-btn").click()
         time.sleep(5)
 
-    def open_vendor_from_search(self,title):
+    def open_vendor_from_search(self):
         wd = self.driver
         wd.find_element_by_id("fast_search_rest_input").click()
-        wd.find_element_by_id("fast_search_rest_input").send_keys(title)
+        wd.find_element_by_id("fast_search_rest_input").send_keys("Тануки")
         time.sleep(1)
         wd.get("http://www.delivery-club.ru/srv/Tanuki/#Volgogradskij_prospjekt/Sushhjevskij_Val")
         time.sleep(2)
