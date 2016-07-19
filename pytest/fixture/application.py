@@ -7,11 +7,11 @@ import time
 class Application:
 
     def __init__(self):
-        self.driver = webdriver.Remote(
-        desired_capabilities=webdriver.DesiredCapabilities.FIREFOX,
-        command_executor='http://192.168.1.123:4444/wd/hub')
-        # self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-        # self.driver.implicitly_wait(30)
+        # self.driver = webdriver.Remote(
+        # desired_capabilities=webdriver.DesiredCapabilities.FIREFOX,
+        # command_executor='http://192.168.1.123:4444/wd/hub')
+        self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+        self.driver.implicitly_wait(30)
         # self.session = SessionHelper(self)
         self.group = GroupHelper(self)
 
@@ -103,7 +103,8 @@ class Application:
         wd.find_element_by_xpath("//h2[@id='anchor_test']//b[.='Популярное']")
         wd.find_element_by_link_text("Инфо").click()
         wd.find_element_by_css_selector("h1")
-        # wd.find_element_by_link_text("Отзывы 4929").click()
+        time.sleep(2)
+        # wd.get("http://www.delivery-club.ru/srv/ILPatio/feedbacks/#Taganskaja/")
         wd.find_element_by_link_text("Меню").click()
 
     def assert_checkout(self):
