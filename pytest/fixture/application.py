@@ -7,8 +7,11 @@ import time
 class Application:
 
     def __init__(self):
-        self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-        self.driver.implicitly_wait(30)
+        self.driver = webdriver.Remote(
+        desired_capabilities=webdriver.DesiredCapabilities.FIREFOX,
+        command_executor='http://192.168.1.123:4444/wd/hub')
+        # self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
+        # self.driver.implicitly_wait(30)
         # self.session = SessionHelper(self)
         self.group = GroupHelper(self)
 
