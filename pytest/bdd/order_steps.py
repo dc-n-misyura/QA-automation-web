@@ -1,6 +1,4 @@
-from pytest_bdd import given, when, then, scenario
-from fixture.session import SessionHelper
-from fixture.application import *
+from pytest_bdd import given, when, then
 
 @given('I navigate to the DC Home page and login')
 #  Открытие страницы логин, проверка профиля и обратно на главную

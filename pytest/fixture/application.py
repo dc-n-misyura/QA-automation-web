@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-# from fixture.session import SessionHelper
-from fixture.group import GroupHelper
 import time
 
 class Application:
@@ -12,8 +10,6 @@ class Application:
         # command_executor='http://192.168.1.123:4444/wd/hub')
         self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
         self.driver.implicitly_wait(30)
-        # self.session = SessionHelper(self)
-        self.group = GroupHelper(self)
 
 
     def open_home_page(self):
@@ -60,15 +56,14 @@ class Application:
         wd.find_element_by_id("user-addr__input").clear()
         wd.find_element_by_id("user-addr__input").send_keys("Москва, улица Александра Солженицына, 23Ас4")
         wd.find_element_by_css_selector("a.user-addr__submit.sbm-btn").click()
-        time.sleep(5)
+        time.sleep(2)
 
     def open_vendor_from_search(self):
         wd = self.driver
         wd.find_element_by_id("fast_search_rest_input").click()
         wd.find_element_by_id("fast_search_rest_input").send_keys("Тануки")
         time.sleep(1)
-        wd.get("http://www.delivery-club.ru/srv/Tanuki/#Volgogradskij_prospjekt/Sushhjevskij_Val")
-        time.sleep(2)
+        wd.find_element_by_css_selector("strong").click()
 
     def ordering_products(self):
         wd = self.driver
@@ -78,7 +73,7 @@ class Application:
         wd.find_element_by_css_selector("a.inc").click()
         wd.find_element_by_css_selector("a.inc").click()
         wd.find_element_by_css_selector("a.done").click()
-        time.sleep(3)
+        time.sleep(2)
 
     def open_cart(self):
         wd = self.driver
@@ -87,7 +82,7 @@ class Application:
     def open_checkout(self):
         wd = self.driver
         wd.find_element_by_link_text("ОФОРМИТЬ ЗАКАЗ").click()
-        time.sleep(3)
+        time.sleep(2)
 
     def assert_balls(self):
         wd = self.driver
@@ -103,7 +98,7 @@ class Application:
         wd.find_element_by_xpath("//h2[@id='anchor_test']//b[.='Популярное']")
         wd.find_element_by_link_text("Инфо").click()
         wd.find_element_by_css_selector("h1")
-        time.sleep(2)
+        # time.sleep(2)
         # wd.get("http://www.delivery-club.ru/srv/ILPatio/feedbacks/#Taganskaja/")
         wd.find_element_by_link_text("Меню").click()
 
