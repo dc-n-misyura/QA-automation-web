@@ -50,18 +50,18 @@ class Application:
         wd= self.driver
         wd.find_element_by_css_selector("uaddresses-str").click()
 
-    def find_by_address_from_home_page(self):
+    def find_by_address_from_home_page(self, new_address):
         wd = self.driver
         wd.find_element_by_id("user-addr__input").click()
         wd.find_element_by_id("user-addr__input").clear()
-        wd.find_element_by_id("user-addr__input").send_keys("Москва, улица Александра Солженицына, 23Ас4")
+        wd.find_element_by_id("user-addr__input").send_keys(new_address)
         wd.find_element_by_css_selector("a.user-addr__submit.sbm-btn").click()
         time.sleep(2)
 
-    def open_vendor_from_search(self):
+    def open_vendor_from_search(self,vendor_title):
         wd = self.driver
         wd.find_element_by_id("fast_search_rest_input").click()
-        wd.find_element_by_id("fast_search_rest_input").send_keys("Тануки")
+        wd.find_element_by_id("fast_search_rest_input").send_keys(vendor_title)
         time.sleep(1)
         wd.find_element_by_css_selector("strong").click()
 
@@ -95,17 +95,13 @@ class Application:
 
     def assert_vendor_page(self):
         wd = self.driver
-        wd.find_element_by_xpath("//h2[@id='anchor_test']//b[.='Популярное']")
         wd.find_element_by_link_text("Инфо").click()
         wd.find_element_by_css_selector("h1")
-        # time.sleep(2)
-        # wd.get("http://www.delivery-club.ru/srv/ILPatio/feedbacks/#Taganskaja/")
         wd.find_element_by_link_text("Меню").click()
 
     def assert_checkout(self):
         wd = self.driver
         wd.find_element_by_name("tel_number_change")
-
 
     def login(self):
         wd = self.driver

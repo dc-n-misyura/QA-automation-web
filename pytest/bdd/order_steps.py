@@ -2,22 +2,22 @@ from pytest_bdd import given, when, then
 
 @given('I navigate to the DC Home page and login')
 #  Открытие страницы логин, проверка профиля и обратно на главную
-def open_home_page(app):
+def open_home_page(app, new_address):
     app.open_home_page()
     app.login()
     app.assert_title_profile()
     app.open_home_page()
     app.assert_balls()
 
-@when('I input in search new address')
-#  Ввожу адрес и попадаю в выдачу
-def search_vendor(app):
-    app.find_by_address_from_home_page()
+@when('I input in search "<new_address>"')
+#  Ввожу адрес из Exapmple {new_address} и попадаю в выдачу
+def search_vendor(app, new_address):
+    app.find_by_address_from_home_page(new_address)
 
-@when('Search and open vendor')
+@when('Search and open "<vendor_title>"')
 #  Ищу необходимый ресторан через поиск
-def find_by_address_from_home_page(app):
-    app.open_vendor_from_search()
+def find_by_address_from_home_page(app,vendor_title):
+    app.open_vendor_from_search(vendor_title)
 
 @when('Check vendor page')
 # Проверяю корректность страницы ресторана
