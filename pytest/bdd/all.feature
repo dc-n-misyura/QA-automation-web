@@ -20,3 +20,15 @@ Scenario Outline: Order
   | Москва, улица Станиславского, 4 | Папа Джонс |
   | Москва, Пятницкая улица, 5 | Шампур Project |
 
+Scenario: Registration New User
+  Given Open home-page and open registration form
+# Открываем главную страницу, далее открываем форму регистрации
+  When Input all required fields "<username>", "<phone>", "<email>", "<password>"
+# Вводим все обязательные поля, - которые берутся из examples
+  Then I press submit button and see homepage authorized user
+# Нажимаем кнопку зарегистрироваться и видим главную страницу авторизованного пользователя
+
+  Examples: Registration New User
+  | username | phone | email | password |
+  | test | 4444444444 | lkdsdfsfh@ksdlkfs.ru | oisdhjkgfhj7362|
+

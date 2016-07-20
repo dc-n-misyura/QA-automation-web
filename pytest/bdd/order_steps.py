@@ -39,3 +39,20 @@ def pass_the_cart_and_checkout(app):
 # Открываем чекаут где сформирован заказ, с введённым адрессом, телефоном, - готовый к отправке
 def check_user_data_in_checkout(app):
     app.assert_checkout()
+
+@given('Open home-page and open registration form')
+#Открываем главную страницу, далее открываем форму регистрации
+def open_registration_form(app):
+    app.open_home_page()
+    app.open_registration_form()
+
+@when('Input all required fields "<username>", "<phone>", "<email>", "<password>"')
+#Вводим все обязательные поля
+def input_required_fields(app,username,phone,email, password):
+    app.input_required_fields(username,phone,email, password)
+
+@then('I press submit button and see homepage authorized user')
+# Нажимаем кнопку зарегистрироваться и видим главную страницу авторизованного пользователя
+def submit_and_check_results_registration(app):
+    app.submit_and_check_results_registration()
+    app.assert_balls()
