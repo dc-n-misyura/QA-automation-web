@@ -23,12 +23,12 @@ Scenario Outline: Order
 Scenario: Registration New User
   Given Open home-page and open registration form
 # Открываем главную страницу, далее открываем форму регистрации
-  When Input all required fields "<username>", "<phone>", "<email>", "<password>"
+  When Input all required fields "<username>", "<phone>", "<password>"
 # Вводим все обязательные поля, - которые берутся из examples
   Then I press submit button and see homepage authorized user
 # Нажимаем кнопку зарегистрироваться и видим главную страницу авторизованного пользователя
 
   Examples: Registration New User
-  | username | phone | email | password |
-  | test | 4444444444 | lkdsdfsfh@ksdlkfs.ru | oisdhjkgfhj7362|
-
+  | username | phone | password |
+  | test | 4444444444 | oisdhjkgfhj7362|
+  | 2test | 4444444444 | sdjhfj7362|

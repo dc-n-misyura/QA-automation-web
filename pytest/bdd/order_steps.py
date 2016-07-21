@@ -46,10 +46,10 @@ def open_registration_form(app):
     app.open_home_page()
     app.open_registration_form()
 
-@when('Input all required fields "<username>", "<phone>", "<email>", "<password>"')
+@when('Input all required fields "<username>", "<phone>", "<password>"')
 #Вводим все обязательные поля
-def input_required_fields(app,username,phone,email, password):
-    app.input_required_fields(username,phone,email, password)
+def input_required_fields(app,username,phone, password):
+    app.input_required_fields(username,phone, password)
 
 @then('I press submit button and see homepage authorized user')
 # Нажимаем кнопку зарегистрироваться и видим главную страницу авторизованного пользователя

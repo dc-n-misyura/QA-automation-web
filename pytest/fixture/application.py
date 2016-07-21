@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 import time
+from mail_random_generator import generate_random_email
 
 class Application:
 
@@ -10,6 +11,7 @@ class Application:
         # command_executor='http://192.168.1.123:4444/wd/hub')
         self.driver = webdriver.Chrome('/usr/local/bin/chromedriver')
         self.driver.implicitly_wait(5)
+        self.email = generate_random_email(7)
 
 
     def open_home_page(self):
@@ -129,7 +131,7 @@ class Application:
         wd.find_element_by_link_text("ЗАРЕГИСТРИРОВАТЬСЯ").click()
         time.sleep(2)
 
-    def input_required_fields(self,username,phone,email, password):
+    def input_required_fields(self,username,phone, password):
         wd = self.driver
         wd.find_element_by_name("name").click()
         wd.find_element_by_name("name").clear()
@@ -139,7 +141,7 @@ class Application:
         wd.find_element_by_name("phone1").send_keys(phone)
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys(email)
+        wd.find_element_by_name("email").send_keys(self.email)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys(password)
