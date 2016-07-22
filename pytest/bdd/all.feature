@@ -32,3 +32,19 @@ Scenario: Registration New User
   | username | phone | password |
   | test | 4444444444 | oisdhjkgfhj7362|
   | 2test | 4444444444 | sdjhfj7362|
+
+Scenario: Add vendor to favorite vendors
+  Given I navigate to the DC Home page and login
+#  Открытие страницы логин, проверка профиля и обратно на главную
+  When I input in search "<new_address>"
+#  Ввожу адрес и попадаю в выдачу
+  And Click to heart
+#  Нажимаю на иконку сердца
+  And Open favorite-vendor list
+#  И открываю страницу Избранное в выдаче
+  Then I see this vendor
+# Вижу этого вендора в этом списке
+
+  Examples: address for favorite
+  | new_address |
+  | Москва, улица Александра Солженицына, 23Ас1 |

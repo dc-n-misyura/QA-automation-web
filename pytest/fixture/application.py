@@ -154,6 +154,22 @@ class Application:
         wd.find_element_by_css_selector("span.user-profile__title").click()
         wd.find_element_by_link_text("Редактировать профайл").click()
 
+    def click_by_favorite_hearth(self):
+        wd = self.driver
+        time.sleep(1)
+        wd.find_element_by_css_selector("div.favorites_like").click()
+
+    def open_favorite_list(self):
+        wd = self.driver
+        wd.find_element_by_xpath("//span[@class='liked']//div[.='ИЗБРАННЫЕ']").click()
+        time.sleep(2)
+
+    def found_favorite_vendor_in_list(self):
+        wd = self.driver
+        wd.find_element_by_link_text("Папа Джонс")
+
+
+
 
 
 

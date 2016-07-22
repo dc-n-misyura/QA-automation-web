@@ -56,3 +56,15 @@ def input_required_fields(app,username,phone, password):
 def submit_and_check_results_registration(app):
     app.submit_and_check_results_registration()
     app.assert_balls()
+
+@when('Click to heart')
+def click_by_favorite_hearth(app):
+    app.click_by_favorite_hearth()
+
+@when('Open favorite-vendor list')
+def open_favorite_list(app):
+    app.open_favorite_list()
+
+@then('I see this vendor')
+def found_favorite_vendor_in_list(app):
+    app.found_favorite_vendor_in_list()

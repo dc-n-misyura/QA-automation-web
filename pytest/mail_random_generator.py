@@ -1,6 +1,8 @@
 import random
 import string
 
+__all__ = ['generate_random_email']
+
 domains = [ "ksdfhj.com", "sdhfs.ru", "sdfjgs.com", "khdfs.com" , "sdjfgksad.ru", "sdfslk.ru"]
 letters = string.ascii_lowercase[:12]
 

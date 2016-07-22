@@ -10,3 +10,7 @@ def test_registration():
 @scenario('all.feature', 'Order')
 def test_order():
     pass
+
+@scenario('all.feature', 'Add vendor to favorite vendors')
+def test_add_favorite_vendor():
+    pass
