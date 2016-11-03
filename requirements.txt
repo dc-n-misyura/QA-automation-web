@@ -1,0 +1,5 @@
+pytest>=3.0.3
+pytest-bdd>=2.18.0
+pytest-xdist>=1.15.0
+requests>=2.11.1
+selenium>=3.0.1
