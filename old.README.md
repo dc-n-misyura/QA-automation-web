@@ -1,6 +1,6 @@
 ### Project information
 
-Project information: https://foodpanda.atlassian.net/wiki/display/FPRUSSIA/QA+Team+Convention
+Project information: N/A now
 
 ### Requirements
 
